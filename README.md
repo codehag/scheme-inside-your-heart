@@ -1,4 +1,6 @@
-# incc
+# Scheme Inside Your Heart.
+
+SIYH for short, pronounced "sigh", with a touch of exasperation.
 
 This project is my implementation of Abdulaziz Ghuloum's paper ["An Incremental Approach to Compiler
 Construction"](./papers/an_incremental_approach_to_compiler_construction.pdf). It takes some of it's instruction from the [expanded tutorial](./papers/backend_to_frontend_to_backend_again.pdf), and some hints from the Nada Amin's [implementation](https://github.com/namin/inc/).

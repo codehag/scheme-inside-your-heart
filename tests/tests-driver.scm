@@ -1,6 +1,17 @@
 (define all-tests '())
 
+(define (compile-program x)
+    (error 'compile-program "implement me!"))
+
 (define-syntax add-tests-with-string-output
+  (syntax-rules (=>)
+    [(_ test-name [expr => output-string] ...)
+     (set! all-tests
+        (cons
+           '(test-name [expr string  output-string] ...)
+            all-tests))]))
+
+(define-syntax add-tests-with-string-output-noboot
   (syntax-rules (=>)
     [(_ test-name [expr => output-string] ...)
      (set! all-tests
@@ -14,7 +25,7 @@
     (close-output-port p)))
 
 (define (build)
-  (unless (zero? (system "gcc -o stst startup.c stst.s"))
+  (unless (zero? (system "gcc-10 -o stst startup.c stst.s"))
     (error 'make "could not build target")))
 
 (define (execute)
