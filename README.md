@@ -17,6 +17,28 @@ didn't work), and basic infrastructure. I tracked my progress in branches associ
 passing test cases as I followed the paper. If you are doing your won implementation, you can check your progress against other
 branches in this repository to see how you are doing, or to help you get unstuck.
 
+The rest are numbered according to the tutorial.
+
+A tip: you can test stuff interactively by running `Petite compiler.scm`, and then
+
+```bash
+⇒  petite compiler.scm
+Petite Chez Scheme Version 9.5.2
+Copyright 1984-2019 Cisco Systems, Inc.
+
+> (compile-program 5)
+```
+It will output some friendly assembly code for you:
+
+```asm
+> (compile-program 5)
+  .text
+  .globl _scheme_entry
+_scheme_entry:
+  movl $20, %eax
+  ret
+```
+
 ##  Requirements
 
 "An Incremental Approach to Compiler Construction" requires a couple of tools, that aren't

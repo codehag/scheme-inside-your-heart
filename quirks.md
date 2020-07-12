@@ -2,7 +2,7 @@
 
 Building and running
 
-* names get mangled when I build. The tutorial had the following output:
+* names get mangled when I build. There are ways to avoid it but, meh. The tutorial had the following output:
 
     ```asm
         .text
@@ -22,7 +22,11 @@ Building and running
         movl $~s, %eax" x
      ret"
     ```
-* `.type` diretive not recognized on mach. So, what was
+
+    so........... i just changed it to that.
+
+* `.type` directive in asm not recognized on Mach-O ABI (application binary interface).
+    Unfortunately this is what mac uses. So, what was
 
     ```asm
         .text
@@ -43,7 +47,7 @@ Building and running
     ```
 * tests-driver.scm was missing a definition, `add-tests-with-string-output-noboot `, which caused
     the test driver to fail. I just copied over `add-tests-with-string-output` and it works fine
-    now.
+    now. This is what i get for using stuff i find online.
 * `compile-program` needed to be defined at the top of test runner, or chez would complain that it
-    wasn't defined.
+    wasn't defined. Thank you, internet.
 
