@@ -26,7 +26,15 @@
 
 (define (build)
   (unless (zero? (system "gcc-10 -o stst startup.c stst.s"))
-    (error 'make "could not build target")))
+    (error 'make "could not build target x86")))
+
+(define (build-web)
+  (unless (zero? (system "wat2wasm stst-web.wat -o output-web.wasm"))
+    (error 'make "could not build target WEB")))
+
+(define (build-wasi)
+  (unless (zero? (system "wat2wasm output-wasi.wat -o output-wasi.wasm"))
+    (error 'make "could not build target WASI")))
 
 (define (execute)
   (unless (zero? (system "./stst > stst.out"))
